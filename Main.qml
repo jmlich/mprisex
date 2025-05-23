@@ -23,14 +23,14 @@ Window {
             Button { text: "Vol-"; onClicked: controller.volumeDown() }
         }
 
-        Label { id: statusLabel }
-        Label { id: titleLabel }
-        Label { id: albumLabel }
-        Label { id: albumArtLabel }
-        Label { id: artistLabel }
+        Label { id: statusLabel; }
+        Label { id: titleLabel; text: controller.title }
+        Label { id: albumLabel; text: controller.album }
+        Label { id: albumArtLabel; text: controller.albumArt }
+        Label { id: artistLabel; text: controller.artist }
         Label { id: volumeLabel }
         Label { id: serviceLabel }
-        Label { id: durationLabel }
+        Label { id: durationLabel; text: controller.duration }
         Label { id: shuffleLabel }
         Label { id: repeatLabel }
 
@@ -50,14 +50,7 @@ Window {
         }
 
         onStatusChanged: statusLabel.text = translateStatus(status())
-        onTitleChanged: titleLabel.text = "Title: " + title()
-        onAlbumChanged: albumLabel.text = "Album: " + album()
-        onAlbumArtChanged: albumArtLabel.text = "AlbumArt" + albumArt()
-        onArtistChanged: artistLabel.text = "Artist: " + artist()
-        onVolumeChanged: volumeLabel.text = "Volume: " + volume()
         onServiceChanged: serviceLabel.text = "Service: " + service()
-        onDurationChanged: durationLabel.text = "Duration: " + duration()
-        onShuffleChanged: shuffleLabel.text = "Shuffle: " + shuffle()
         onRepeatChanged: repeatLabel.text = "Repeat: " + repeat()
 
 

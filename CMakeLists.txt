@@ -29,9 +29,6 @@ target_link_libraries(appmprisex
     libwatchfish
 )
 
-# Install QML files (if needed)
-install(FILES Main.qml DESTINATION ${CMAKE_INSTALL_BINDIR})
-
 # Define your custom macro or variable
 set(WATCHFISH_FEATURES "music")
 

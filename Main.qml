@@ -95,6 +95,9 @@ Window {
     }
 
     function formatDuration(d) {
-        return Math.round(d/60000) + ":" + (d % 60000)/1000
+        let minutes = Math.floor(d/60000)
+        let seconds = (d % 60000)/1000
+        console.log( minutes + " : " + seconds)
+        return minutes + ":" + ((seconds < 10) ? ("0" + seconds) : seconds)
     }
 }

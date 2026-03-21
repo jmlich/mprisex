@@ -88,10 +88,6 @@ Window {
         onServiceChanged: serviceLabel.text = service()
         onRepeatChanged: repeatLabel.text = translateRepeat(repeat()) + " "
 
-        onMetadataChanged: {
-            console.log(JSON.stringify(metadata(),0, 2))
-        }
-
     }
 
     function formatDuration(d) {
